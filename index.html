@@ -500,7 +500,6 @@ function runLoader(after){
   st.style.opacity=1; st.textContent='Counting the weeks you’ve lived…';
   arc.style.transition='none'; arc.style.strokeDashoffset=CIRC;
   L.classList.add('show');
-  if(RM){ arc.style.strokeDashoffset=0; pct.textContent='100'; ft.textContent=pool[0]; ft.classList.add('show'); setTimeout(()=>{ if(after) after(); L.classList.remove('show'); },1000); return; }
   const start=performance.now();
   requestAnimationFrame(()=>{ arc.style.transition='stroke-dashoffset '+DUR+'ms cubic-bezier(0.25, 1, 0.5, 1)'; arc.style.strokeDashoffset=0; });
   (function tick(now){
