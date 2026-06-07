@@ -17,3 +17,11 @@ A highly optimized visual representation of your life in weeks, months, or years
   - **Throttled Scroll Progress**: Added requestAnimationFrame throttling to the window scroll handler to avoid unnecessary layout updates on scroll.
   - **CSS Containment**: Added `contain: layout paint;` to the grid container, isolating style recalculations.
   - **Premium Loading Transition**: Enhanced the fake loader duration from 4.0s to 2.4s, and introduced a cubic ease-out progress percentage counter and SVG transition curve.
+
+- **Round 2 Performance & Animation Overhaul (June 2026)**
+  - **Linear Onboarding Counter**: Rewrote the progress counter to tick linearly from 1 to 100 over the 2.4s duration, ensuring every percentage point is visible without jumps.
+  - **3,900 CSS Animation Elimination**: Replaced individual staggered animations on all week dots with a single, high-performance opacity fade-in on the grid container, reducing concurrent DOM animations from 3,900 to 0.
+  - **GPU Spotlight Acceleration**: Replaced layout-triggering `left`/`top` CSS mutations on mouse spotlight with hardware-accelerated `transform` updates, throttled to 60fps using `requestAnimationFrame`.
+  - **Static Grain Overlay**: Converted the grain noise animation to a static overlay, avoiding constant full-screen GPU compositing overhead.
+  - **Font Preloading**: Preloaded the Google Fonts stylesheet to accelerate font rendering and reduce initial text flash (FOUT).
+
