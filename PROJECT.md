@@ -8,6 +8,7 @@ A highly optimized visual representation of your life in weeks, months, or years
   - Initialized git repository.
   - Linked to remote repository `https://github.com/Kutral/life`.
   - Pushed to `main` and `gh-pages` branches to enable automatic deployment on GitHub Pages.
+  - Added a highly descriptive and beautifully styled `README.md` file.
 
 - **Performance & Transition Optimizations (June 2026)**
   - **Onboarding Background**: Optimized background canvas animation by batch rendering the 2,000+ default dots. This reduced individual drawing/pathing calls from ~3,000 to <150 per frame, enabling 60fps rendering on both desktop and mobile.
