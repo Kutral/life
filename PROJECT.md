@@ -24,4 +24,7 @@ A highly optimized visual representation of your life in weeks, months, or years
   - **GPU Spotlight Acceleration**: Replaced layout-triggering `left`/`top` CSS mutations on mouse spotlight with hardware-accelerated `transform` updates, throttled to 60fps using `requestAnimationFrame`.
   - **Static Grain Overlay**: Converted the grain noise animation to a static overlay, avoiding constant full-screen GPU compositing overhead.
   - **Font Preloading**: Preloaded the Google Fonts stylesheet to accelerate font rendering and reduce initial text flash (FOUT).
-
+- **Final Visual Polish (June 2026)**
+  - **Loader Formatting**: Restructured the loader HTML to absolute position the `%` symbol outside of the flex container, perfectly centering the "100" counter without horizontal layout shifting.
+  - **Loader Duration & Completion**: Lengthened the fake loading duration to 3.6s and added a subtle, satisfying cubic-bezier scale/color pulse when reaching 100%, holding for 1s before dismissing.
+  - **Dynamic Grid Stats**: Fixed a bug where LIVED, LEFT, and SPENT % text was hardcoded to weeks. The stats now instantly update and recalculate dynamically when the user toggles between Weeks, Months, and Years.
