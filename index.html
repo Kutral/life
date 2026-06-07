@@ -139,7 +139,7 @@ h2 em{font-style:italic; color:var(--gold)}
 .reveal.in{opacity:1; transform:none; filter:none}
 
 /* live clock */
-.clock{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:38px}
+.clock{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:38px}
 .clock .c{padding:22px 18px; border:1px solid var(--line); border-radius:14px; background:linear-gradient(160deg,rgba(255,255,255,.035),rgba(255,255,255,.006))}
 .clock .c .lab{font-family:var(--mono); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--bone-dim)}
 .clock .c .v{font-family:var(--mono); font-weight:500; font-size:clamp(20px,2.6vw,30px); margin-top:10px; letter-spacing:-.01em}
@@ -287,6 +287,8 @@ h2 em{font-style:italic; color:var(--gold)}
       <div class="c down"><div class="lab">Seconds left (to 75)</div><div class="v" id="cl-left">—</div><div class="x">draining now</div></div>
       <div class="c up"><div class="lab">Heartbeats</div><div class="v" id="cl-beats">—</div><div class="x">~70 / min</div></div>
       <div class="c up"><div class="lab">Breaths taken</div><div class="v" id="cl-breath">—</div><div class="x">~16 / min</div></div>
+      <div class="c up"><div class="lab">Hours slept</div><div class="v" id="cl-sleep-lived">—</div><div class="x">~8 hrs / day</div></div>
+      <div class="c down"><div class="lab">Hours left to sleep</div><div class="v" id="cl-sleep-left">—</div><div class="x">~8 hrs / day</div></div>
     </div>
     <div class="scrollcue">Scroll</div>
   </section>
@@ -686,6 +688,8 @@ function startClock(){
     $('cl-left').textContent=fmt(secLeft);
     $('cl-beats').textContent=fmt(secLived*70/60);
     $('cl-breath').textContent=fmt(secLived*16/60);
+    $('cl-sleep-lived').textContent=fmt(secLived/10800);
+    $('cl-sleep-left').textContent=fmt(secLeft/10800);
   }
   tick(); setInterval(tick,1000);
 }
